@@ -10,8 +10,10 @@ def upload_file(request):
 
             # here can added logic
             return HttpResponse('File uploaded successfully')
-
         else:
+        # Форма невалидна, вернуть пустую форму для отображения ошибок
             form = UploadFileForm()
+    else:
+        form = UploadFileForm()
         return render(request, 'upload.html', {'form': form})
-        
+    

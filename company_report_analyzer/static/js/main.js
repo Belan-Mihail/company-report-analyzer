@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const fileInput = document.getElementById('input_field')
+    const inputLabel = document.getElementById('inputLabel')
     const subButton = document.getElementById('submit_button')
 
     if (fileInput.files.length == 0) {     

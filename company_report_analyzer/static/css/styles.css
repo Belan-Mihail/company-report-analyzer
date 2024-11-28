@@ -1,3 +1,7 @@
-input[type="file"]::-webkit-file-button {
+/* input[type="file"] {
+    display: none;
+} */
+
+#div_id_file {
     display: none;
 }

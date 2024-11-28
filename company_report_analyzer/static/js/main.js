@@ -6,22 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (fileInput.files.length == 0) {     
         subButton.style.display = 'none' 
+        cancelButton.style.display = 'none'
         inputLabel.textContent = 'Choose file'
     } 
 
-    console.log(fileInput.files.length)
+    
     fileInput.addEventListener('change', () => {
-        console.log(fileInput.files.length)
+        
         if (fileInput.files.length > 0) {
             inputLabel.textContent = fileInput.files[0].name
             subButton.style.display = 'inline-block' 
+            cancelButton.style.display = 'inline-block'
         } 
     })
 
     cancelButton.addEventListener('click', () => {
         fileInput.value = ''
         subButton.style.display = 'none' 
+        cancelButton.style.display = 'none'
         inputLabel.textContent = 'Choose file'
-        console.log(fileInput.files.length)
+       
     })
 })

@@ -15,7 +15,7 @@
         {% csrf_token %}
         {{ form|crispy }}
         
-        
+        <label for="input_field" id="inputLabel">Click to choose a file</label>
         <input type="file" id="input_field">
         <button type="submit" id="submit_button">Upload file</button>
     </form>

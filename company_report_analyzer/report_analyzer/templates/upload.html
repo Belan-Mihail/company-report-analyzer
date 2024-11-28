@@ -14,9 +14,9 @@
         {% csrf_token %}
         {{ form|crispy }}
         
-        <input type="file" id="input_field" style="display: none;">
+        <input type="file" id="input_field">
         <span id="input_field_span"></span>
-        <button type="submit" id="submit_button" disabled>Upload file</button>
+        <button type="submit" id="submit_button">Upload file</button>
     </form>
 </body>
 </html>

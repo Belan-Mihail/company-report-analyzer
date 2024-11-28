@@ -3,13 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileInputSpan = document.getElementById('input_field_span')
     const subButton = document.getElementById('submit_button')
 
+    if (fileInput.files.length == 0) {
+        fileInputSpan.textContent = '(File no chhosen)'
+        subButton.disabled = true 
+    }
+
+    console.log(fileInput.files.length)
     fileInput.addEventListener('change', () => {
-        if (fileInput.files.lenght > 0) {
+        console.log("Hello", fileInput.files.length)
+        if (fileInput.files.length > 0) {
             fileInputSpan.textContent = fileInput.files[0].name
             subButton.disabled = false 
-        } else {
-            fileInputSpan.textContent = '(File no chhosen)'
-            subButton.disabled = true
-        }
+        } 
     })
 })

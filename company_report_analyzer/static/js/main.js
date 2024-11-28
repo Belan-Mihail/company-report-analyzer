@@ -5,13 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (fileInput.files.length == 0) {     
         subButton.disabled = true 
+        inputLabel.textContent = 'Choose file'
     }
 
     console.log(fileInput.files.length)
     fileInput.addEventListener('change', () => {
 
         if (fileInput.files.length > 0) {
-
+            inputLabel.textContent = fileInput.files[0].name
             subButton.disabled = false 
         } 
     })

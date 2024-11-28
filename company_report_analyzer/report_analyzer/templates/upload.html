@@ -13,10 +13,10 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|crispy }}
-        <label for="input_field">Choose a file</label>
+        
         <input type="file" id="input_field" style="display: none;">
-        <span id="input_field_span">(No file choosen)</span>
-        <button type="submit" id="submit_button" style="display: none;">Upload file</button>
+        <span id="input_field_span"></span>
+        <button type="submit" id="submit_button" disabled>Upload file</button>
     </form>
 </body>
 </html>

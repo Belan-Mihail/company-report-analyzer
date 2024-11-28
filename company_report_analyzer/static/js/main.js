@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subButton = document.getElementById('submit_button')
 
     if (fileInput.files.length == 0) {     
-        subButton.disabled = true 
+        subButton.style.display = 'none' 
         inputLabel.textContent = 'Choose file'
     }
 
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (fileInput.files.length > 0) {
             inputLabel.textContent = fileInput.files[0].name
-            subButton.disabled = false 
+            subButton.style.display = 'inline-block' 
         } 
     })
 })

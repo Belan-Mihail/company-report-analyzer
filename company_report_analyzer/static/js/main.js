@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputLabel = document.getElementById('inputLabel')
     const subButton = document.getElementById('submit_button')
     const cancelButton = document.getElementById('cancel_button')
-    
+    const modalWindow = document.getElementById('modal')
 
     if (fileInput.files.length == 0) {     
         subButton.style.display = 'none' 

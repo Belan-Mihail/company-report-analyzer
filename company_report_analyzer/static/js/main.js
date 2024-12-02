@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cancelButton = document.getElementById('cancel_button')
     const modalWindow = document.getElementById('modal')
     const cancelProcessButton = document.getElementById('cancel-processing-button')
+    const form = document.querySelector('form')
     
 
     if (fileInput.files.length == 0) {     
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cancelButton.style.display = 'none'
         
     } 
-    console.log(fileInput.files.length)
+    
     
     fileInput.addEventListener('change', () => {
         

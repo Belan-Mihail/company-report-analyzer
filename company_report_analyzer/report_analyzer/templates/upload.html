@@ -20,27 +20,28 @@
         <input type="file" id="input_field">
         <button type="button" id="select-reports_button">Select reports</button>
         <button type="button" id="cancel_button">Cancel</button>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+            <h3 class="modal-title">Select the required reports</h3> 
+            <div class="modal-content">
+                <div class="modal-content-inputs">
+                    <input type="checkbox" name="reports" value="report1">Report 1
+                    <input type="checkbox" name="reports" value="report2">Report 2
+                    <input type="checkbox" name="reports" value="report3">Report 3
+                    <input type="checkbox" name="reports" value="report4">Report 4
+                    <input type="checkbox" name="reports" value="report5">Report 5
+                    <input type="checkbox" name="reports" value="report6">Report 6
+                    <input type="checkbox" name="reports" value="report7">Report 7
+                    <input type="checkbox" name="reports" value="report8">Report 8
+                </div>
+                <div class="modal-content-form-button">
+                    <button  id="confirm-processing-button" type="submit">Start processing</button>
+                    <button  id="cancel-processing-button" type="button">Cancel processing</button>
+                </div>
+            </в>
+            </div>
+        </div> 
     </form>
-    <div class="modal" id="modal">
-        <div class="modal-content">
-           <h3 class="modal-titel">Select the required reports</h3> 
-           <form class="modal-content-form">
-            <div class="modal-content-form-inputs">
-                <input type="checkbox" name="reports" value="report1">Report 1
-                <input type="checkbox" name="reports" value="report2">Report 2
-                <input type="checkbox" name="reports" value="report3">Report 3
-                <input type="checkbox" name="reports" value="report4">Report 4
-                <input type="checkbox" name="reports" value="report5">Report 5
-                <input type="checkbox" name="reports" value="report6">Report 6
-                <input type="checkbox" name="reports" value="report7">Report 7
-                <input type="checkbox" name="reports" value="report8">Report 8
-            </div>
-            <div class="modal-content-form-button">
-                <button  id="confirm-processing-button" type="button">Start processing</button>
-                <button  id="cancel-processing-button" type="button">Cancel processing</button>
-            </div>
-           </form>
-        </div>
-    </div>
+    
 </body>
 </html>

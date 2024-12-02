@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(fileInput.files.length)
     
     fileInput.addEventListener('change', () => {
-        console.log(fileInput.files.length)
+        
         if (fileInput.files.length > 0) {
             
             reportsButton.style.display = 'inline-block' 

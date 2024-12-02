@@ -28,4 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         inputLabel.textContent = 'Choose file'
        
     })
+
+    subButton.addEventListener('click', (event) => {
+        event.preventDefault()
+
+        modalWindow.style.display = 'block'
+    })
 })

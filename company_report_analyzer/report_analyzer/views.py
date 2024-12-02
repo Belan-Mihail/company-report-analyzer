@@ -4,10 +4,18 @@ from .forms import UploadFileForm
 
 
 def process_file(uploaded_file, reports):
-    print(reports)
+    print("Reports selected:", reports)
+    
     if uploaded_file:
+        print("File received:", uploaded_file.name)
+
         if uploaded_file.size > 0:
-            print('file exist')
+            print("File size:", uploaded_file.size)
+
+        else:
+            print("Uploaded file is empty")
+    else:
+        print("No file uploaded")
 
 def upload_file(request):
     if request.method == 'POST':
@@ -18,9 +26,9 @@ def upload_file(request):
 
             # We receive the selected reports
             selected_reports = request.POST.getlist('reports')
-
+            print("Selected reports:", selected_reports)
             #Processing a file with selected reports
-            analysis_results = process_file(uploaded_file, selected_reports)
+            process_file(uploaded_file, selected_reports)
 
             # here can added logic
             return HttpResponse('File uploaded successfully')

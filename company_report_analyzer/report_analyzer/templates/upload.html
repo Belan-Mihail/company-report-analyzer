@@ -17,7 +17,9 @@
         {{ form|crispy }}
         
         <label for="input_field" id="inputLabel"></label>
-        <input type="file" id="input_field">
+        <input type="file" id="input_field" name="file">
+
+    
         <button type="button" id="select-reports_button">Select reports</button>
         <button type="button" id="cancel_button">Cancel</button>
         <div class="modal" id="modal">
@@ -35,10 +37,10 @@
                     <input type="checkbox" name="reports" value="report8">Report 8
                 </div>
                 <div class="modal-content-form-button">
-                    <button  id="confirm-processing-button" type="submit">Start processing</button>
+                    <button type="submit" id="confirm-processing-button">Start processing</button>
                     <button  id="cancel-processing-button" type="button">Cancel processing</button>
                 </div>
-            </в>
+            </div>
             </div>
         </div> 
     </form>

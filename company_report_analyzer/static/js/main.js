@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const cancelButton = document.getElementById('cancel_button')
     const modalWindow = document.getElementById('modal')
     const cancelProcessButton = document.getElementById('cancel-processing-button')
+    const realinput = document.getElementById('id_file')
+    const customUploadButton = document.getElementById('confirm-processing-button')
+
+    // const customUploadButton = document.getElementById('confirm-processing-button');
+
+    customUploadButton.addEventListener('click', () => {
+        realinput.click();  // При клике на кастомную кнопку, вызываем стандартный инпут
+    });
 
     if (fileInput.files.length == 0) {     
         reportsButton.style.display = 'none' 

@@ -32,10 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     reportsButton.addEventListener('click', (event) => {
         event.preventDefault()
-
+        cancelProcessButton.style.display = 'block'  
         modalWindow.style.display = 'block'      
         reportsButton.style.display = 'none' 
         cancelButton.style.display = 'none'
 
+    })
+
+    cancelProcessButton.addEventListener('click', () => {
+        modalWindow.style.display = 'none'    
+        cancelProcessButton.style.display = 'none'  
+        fileInput.value = ''
+        inputLabel.textContent = 'Choose file'
     })
 })

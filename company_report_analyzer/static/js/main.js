@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const reportsButton = document.getElementById('select-reports_button')
     const cancelButton = document.getElementById('cancel_button')
     const modalWindow = document.getElementById('modal')
+    const cancelProcessButton = document.getElementById('cancel-processing-button')
 
     if (fileInput.files.length == 0) {     
         reportsButton.style.display = 'none' 

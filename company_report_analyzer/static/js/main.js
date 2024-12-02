@@ -51,4 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
             checkbox.checked = false;
         })    
     })
+
+    form.addEventListener('submit', (event) => {
+        // select all checkboxes
+        const checkboxes = modalWindow.querySelectorAll('input[type="checkbox"]')
+
+        //make array of checked checboxes
+        const checkedCheckboxes = Array.from(checkboxes).filter(checkbox => checkbox.checked)
+
+        // check checked checkbox
+        if (checkedCheckboxes.length === 0) {
+            event.preventDefault();
+            alert('Please select at least one report.')
+        }            
+    })
 })

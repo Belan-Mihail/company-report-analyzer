@@ -7,10 +7,14 @@ def upload_file(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
+            uploaded_file = request.FILES['file']
             form.save()
 
             # We receive the selected reports
             selected_reports = request.POST.getlist('reports')
+
+            #Processing a file with selected reports
+            analysis_results = process_file(upload_file, selected_reports)
 
             # here can added logic
             return HttpResponse('File uploaded successfully')

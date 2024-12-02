@@ -5,3 +5,9 @@ input[type="file"] {
 #div_id_file {
     display: none;
 }
+
+.modal {
+    display: none;
+    
+}
+

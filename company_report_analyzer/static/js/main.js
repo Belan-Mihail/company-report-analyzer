@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const fileInput = document.getElementById('input_field')
     const inputLabel = document.getElementById('inputLabel')
-    const subButton = document.getElementById('submit_button')
+    const reportsButton = document.getElementById('select-reports_button')
     const cancelButton = document.getElementById('cancel_button')
     const modalWindow = document.getElementById('modal')
 
     if (fileInput.files.length == 0) {     
-        subButton.style.display = 'none' 
+        reportsButton.style.display = 'none' 
         cancelButton.style.display = 'none'
         inputLabel.textContent = 'Choose file'
     } 
@@ -16,20 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (fileInput.files.length > 0) {
             inputLabel.textContent = fileInput.files[0].name
-            subButton.style.display = 'inline-block' 
+            reportsButton.style.display = 'inline-block' 
             cancelButton.style.display = 'inline-block'
         } 
     })
 
     cancelButton.addEventListener('click', () => {
         fileInput.value = ''
-        subButton.style.display = 'none' 
+        reportsButton.style.display = 'none' 
         cancelButton.style.display = 'none'
         inputLabel.textContent = 'Choose file'
        
     })
 
-    subButton.addEventListener('click', (event) => {
+    reportsButton.addEventListener('click', (event) => {
         event.preventDefault()
 
         modalWindow.style.display = 'block'

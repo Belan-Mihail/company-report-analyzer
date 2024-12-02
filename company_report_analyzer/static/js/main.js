@@ -33,5 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault()
 
         modalWindow.style.display = 'block'
+        
+        reportsButton.style.display = 'none' 
+        cancelButton.style.display = 'none'
+
     })
 })

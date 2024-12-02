@@ -15,10 +15,6 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|crispy }}
-        
-        <!-- <label for="input_field" id="inputLabel"></label>-->
-         <!-- <input type="file" id="input_field" name="file">   -->
-
     
         <button type="button" id="select-reports_button">Select reports</button>
         <button type="button" id="cancel_button">Cancel</button>

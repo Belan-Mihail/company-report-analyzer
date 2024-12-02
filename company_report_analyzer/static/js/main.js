@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const fileInput = document.getElementById('input_field')
-    const inputLabel = document.getElementById('inputLabel')
+    const fileInput = document.getElementById('id_file')
     const reportsButton = document.getElementById('select-reports_button')
     const cancelButton = document.getElementById('cancel_button')
     const modalWindow = document.getElementById('modal')
@@ -10,14 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (fileInput.files.length == 0) {     
         reportsButton.style.display = 'none' 
         cancelButton.style.display = 'none'
-        inputLabel.textContent = 'Choose file'
+        
     } 
-
+    console.log(fileInput.files.length)
     
     fileInput.addEventListener('change', () => {
-        
+        console.log(fileInput.files.length)
         if (fileInput.files.length > 0) {
-            inputLabel.textContent = fileInput.files[0].name
+            
             reportsButton.style.display = 'inline-block' 
             cancelButton.style.display = 'inline-block'
         } 
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fileInput.value = ''
         reportsButton.style.display = 'none' 
         cancelButton.style.display = 'none'
-        inputLabel.textContent = 'Choose file'
+        
        
     })
 
@@ -44,6 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         modalWindow.style.display = 'none'    
         cancelProcessButton.style.display = 'none'  
         fileInput.value = ''
-        inputLabel.textContent = 'Choose file'
+        
     })
 })

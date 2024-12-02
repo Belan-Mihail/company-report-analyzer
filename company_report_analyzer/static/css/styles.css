@@ -1,10 +1,10 @@
-input[type="file"] {
+/* input[type="file"] {
     display: none;
-}
+} */
 
-#div_id_file {
+/* #div_id_file {
     display: none;
-}
+} */
 
 .modal {
     display: none;

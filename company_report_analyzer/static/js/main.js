@@ -43,6 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
         modalWindow.style.display = 'none'    
         cancelProcessButton.style.display = 'none'  
         fileInput.value = ''
-        
+
+        // Reset the state of all checkboxes
+        const checkboxes = modalWindow.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        })    
     })
 })

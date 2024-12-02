@@ -2,9 +2,10 @@
     display: none;
 } */
 
-/* #div_id_file {
+.requiredField {
     display: none;
-} */
+}
+
 
 .modal {
     display: none;

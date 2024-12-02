@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reportsButton.addEventListener('click', (event) => {
         event.preventDefault()
 
-        modalWindow.style.display = 'block'
-        
+        modalWindow.style.display = 'block'      
         reportsButton.style.display = 'none' 
         cancelButton.style.display = 'none'
 

@@ -3,6 +3,12 @@ from django.http import HttpResponse
 from .forms import UploadFileForm
 
 
+def process_file(uploaded_file, reports):
+    print(reports)
+    if uploaded_file:
+        if uploaded_file.size > 0:
+            print('file exist')
+
 def upload_file(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
@@ -14,7 +20,7 @@ def upload_file(request):
             selected_reports = request.POST.getlist('reports')
 
             #Processing a file with selected reports
-            analysis_results = process_file(upload_file, selected_reports)
+            analysis_results = process_file(uploaded_file, selected_reports)
 
             # here can added logic
             return HttpResponse('File uploaded successfully')

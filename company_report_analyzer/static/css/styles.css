@@ -1,14 +1,13 @@
-/* input[type="file"] {
-    display: none;
-} */
-
 .requiredField {
     display: none;
 }
 
-
 .modal {
     display: none;
-    
 }
 
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3 ease-in;
+}

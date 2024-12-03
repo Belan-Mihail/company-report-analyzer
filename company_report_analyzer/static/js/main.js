@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cancelButton.classList.add('hidden')
     } 
     
-    
+    // File change handler
     fileInput.addEventListener('change', () => {
         if (fileInput.files.length > 0) {
             reportsButton.classList.remove('hidden') 
@@ -22,10 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } 
     })
 
+    // Cancel button handler
     cancelButton.addEventListener('click', () => {
         fileInput.value = ''
-        reportsButton.style.display = 'none' 
-        cancelButton.style.display = 'none'
+        reportsButton.classList.remove('visible') 
+        cancelButton.classList.remove('visible') 
+        reportsButton.classList.add('hidden') 
+        cancelButton.classList.add('hidden') 
         
        
     })

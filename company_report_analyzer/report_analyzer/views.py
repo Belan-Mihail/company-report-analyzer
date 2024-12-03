@@ -4,18 +4,7 @@ from .forms import UploadFileForm
 
 
 def process_file(uploaded_file, reports):
-    print("Reports selected:", reports)
-    
-    if uploaded_file:
-        print("File received:", uploaded_file.name)
-
-        if uploaded_file.size > 0:
-            print("File size:", uploaded_file.size)
-
-        else:
-            print("Uploaded file is empty")
-    else:
-        print("No file uploaded")
+    print('hello')
 
 def upload_file(request):
     if request.method == 'POST':
@@ -33,7 +22,7 @@ def upload_file(request):
             # here can added logic
             return HttpResponse('File uploaded successfully')
         else:
-        # Форма невалидна, вернуть пустую форму для отображения ошибок
+        # Form is invalid, return empty form to display errors
             form = UploadFileForm()
     else:
         form = UploadFileForm()

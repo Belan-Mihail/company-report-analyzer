@@ -46,9 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
         cancelButton.classList.add('hidden');
     })
 
+    // Handler for the cancel-processing button
     cancelProcessButton.addEventListener('click', () => {
-        modalWindow.style.display = 'none'    
-        cancelProcessButton.style.display = 'none'  
+        modalWindow.classList.remove('visible');
+        cancelProcessButton.classList.remove('visible');
+        modalWindow.classList.add('hidden');
+        cancelProcessButton.classList.add('hidden');
         fileInput.value = ''
 
         // Reset the state of all checkboxes
@@ -58,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })    
     })
 
+    // Form submit handler
     form.addEventListener('submit', (event) => {
         // select all checkboxes
         const checkboxes = modalWindow.querySelectorAll('input[type="checkbox"]')

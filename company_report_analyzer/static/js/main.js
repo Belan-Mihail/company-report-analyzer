@@ -6,20 +6,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const cancelProcessButton = document.getElementById('cancel-processing-button')
     const form = document.querySelector('form')
     
-
+    // Hide buttons when loading a page if there is no file selected
     if (fileInput.files.length == 0) {     
-        reportsButton.style.display = 'none' 
-        cancelButton.style.display = 'none'
-        
+        reportsButton.classList.add('hidden') 
+        cancelButton.classList.add('hidden')
     } 
     
     
     fileInput.addEventListener('change', () => {
-        
         if (fileInput.files.length > 0) {
-            
-            reportsButton.style.display = 'inline-block' 
-            cancelButton.style.display = 'inline-block'
+            reportsButton.classList.remove('hidden') 
+            cancelButton.classList.remove('hidden') 
+            reportsButton.classList.add('visible') 
+            cancelButton.classList.add('visible') 
         } 
     })
 

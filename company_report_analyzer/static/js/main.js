@@ -33,13 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
        
     })
 
+    // Reports button handler
     reportsButton.addEventListener('click', (event) => {
         event.preventDefault()
-        cancelProcessButton.style.display = 'block'  
-        modalWindow.style.display = 'block'      
-        reportsButton.style.display = 'none' 
-        cancelButton.style.display = 'none'
-
+        cancelProcessButton.classList.remove('hidden');
+        modalWindow.classList.remove('hidden');
+        cancelProcessButton.classList.add('visible');
+        modalWindow.classList.add('visible');
+        reportsButton.classList.remove('visible');
+        cancelButton.classList.remove('visible');
+        reportsButton.classList.add('hidden');
+        cancelButton.classList.add('hidden');
     })
 
     cancelProcessButton.addEventListener('click', () => {

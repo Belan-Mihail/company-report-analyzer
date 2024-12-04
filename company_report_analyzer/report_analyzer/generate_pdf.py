@@ -114,16 +114,19 @@ def generate_pdf(df, selected_reports):
     if 'report8' in selected_reports:
         
         # Percentage distribution of sales by region
-        region_percentage_by_region = round(df.groupby('Region')['Sales'].sum() / df['Sales'].sum() * 100, 2)
+        percentage_by_region = round(df.groupby('Region')['Sales'].sum() / df['Sales'].sum() * 100, 2)
         
-        # Percentage distribution of sales by company
-        company_percentage_by_region = round(df.groupby('Company')['Sales'].sum() / df['Sales'].sum() * 100, 2)
+        # Percentage distribution of sales by companies
+        percentage_by_companies = round(df.groupby('Company')['Sales'].sum() / df['Sales'].sum() * 100, 2)
 
         # Create a figure with two subgraphs
         fig, axes = plt.subplots(1, 2, figsize=(14, 7))
 
         # Graph for regions
-        region_percentage_by_region.plot(kind='pie', autopct='%1.1f%%', title='Percentage distribution of sales by region', ax=axes[0])
+        percentage_by_region.plot(kind='pie', autopct='%1.1f%%', title='Percentage distribution of sales by region', ax=axes[0])
+
+        # Graph fro companies
+        percentage_by_companies.plot(kind='pie', autopct='%1.1f%%', title='Percentage distribution of sales by companies', ax=axes[1] )
         
 
 generate_pdf(df, selected_reports)

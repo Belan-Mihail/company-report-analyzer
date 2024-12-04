@@ -91,6 +91,12 @@ def generate_pdf(df, selected_reports):
         # Correlation between sales and dates
         corr = df[['Sales', 'Date']].corr()
 
+        # Add graph
+        sns.heatmap(corr, annot=True, cmap='coolwarm', cbar=True)
+        plt.title('Correlation between sales and dates')
+        
+
+
     # if report7 in selected_reports:
     if 'report7' in selected_reports:
         print('hello report7')

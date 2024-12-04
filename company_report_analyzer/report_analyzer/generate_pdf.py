@@ -6,7 +6,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 # 1 Loading data from sales_data.csv
 df = pd.read_csv('sales_data.csv')
 
-selected_reports = ['report2']
+selected_reports = ['report3']
 
 def generate_pdf(df, selected_reports):
 
@@ -51,7 +51,13 @@ def generate_pdf(df, selected_reports):
     
     # if report3 in selected_reports:
     if 'report3' in selected_reports:
-        print('hello report3')
+        
+        # add month column
+        df['Month'] = df['Date'].dt.to_period('M')
+        print(df.head())
+
+        
+
     
     # if report4 in selected_reports:
     if 'report4' in selected_reports:

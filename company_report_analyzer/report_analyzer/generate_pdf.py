@@ -35,11 +35,18 @@ def generate_pdf(df, selected_reports):
     # if report2 in selected_reports:
     if 'report2' in selected_reports:
         
-        # group sales by company
+        # Group sales by company
         company_sales = df.groupby('Company')['Sales'].sum().sort_values(ascending=False)
         print(company_sales)
 
-        
+        # Abbreviation of region names to the first 10 letters
+        company_sales.index = company_sales.index.str.slice(0,10)
+
+        # Plotting a graph
+        sns.barplot(x=company_sales.index, y=company_sales.values)
+        plt.title('Sales by companies')
+        plt.xticks(rotation=45)
+        plt.show()
 
     
     # if report3 in selected_reports:

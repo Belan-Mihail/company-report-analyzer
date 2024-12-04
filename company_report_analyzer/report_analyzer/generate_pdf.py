@@ -121,6 +121,9 @@ def generate_pdf(df, selected_reports):
 
         # Create a figure with two subgraphs
         fig, axes = plt.subplots(1, 2, figsize=(14, 7))
+
+        # Graph for regions
+        region_percentage_by_region.plot(kind='pie', autopct='%1.1f%%', title='Percentage distribution of sales by region', ax=axes[0])
         
 
 generate_pdf(df, selected_reports)

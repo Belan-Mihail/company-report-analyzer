@@ -54,7 +54,9 @@ def generate_pdf(df, selected_reports):
         
         # add month column
         df['Month'] = df['Date'].dt.to_period('M')
-        print(df.head())
+        
+        # Sales by month
+        sales_by_month = df.groupby('Month')['Sales'].sum()
 
         
 

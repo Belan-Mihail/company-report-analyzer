@@ -6,7 +6,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 # 1 Loading data from sales_data.csv
 df = pd.read_csv('sales_data.csv')
 
-selected_reports = ['report6']
+selected_reports = ['report7']
 
 def generate_pdf(df, selected_reports):
 
@@ -96,10 +96,14 @@ def generate_pdf(df, selected_reports):
         plt.title('Correlation between sales and dates')
         
 
-
     # if report7 in selected_reports:
     if 'report7' in selected_reports:
-        print('hello report7')
+        
+        # Checking for the existence of the month column in the table
+        if 'Month' not in df.columns:
+            df['Month'] = df['Date'].to_period('M')
+
+
 
     # if report8 in selected_reports:
     if 'report8' in selected_reports:

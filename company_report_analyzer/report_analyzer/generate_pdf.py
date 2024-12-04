@@ -104,7 +104,11 @@ def generate_pdf(df, selected_reports):
             df['Month'] = df['Date'].dt.to_period('M')
 
         # Sales by month and region
-        sales_by_month_region = df.groupby(['Month', 'Region'])['Sales'].sum().unstack()
+        sales_by_month_region = df.groupby(['Region', 'Month'])['Sales'].sum()
+
+        # Create graph
+        sales_by_month_region.plot(kind='line', title='Sale trends by month and region')
+        
         
 
 

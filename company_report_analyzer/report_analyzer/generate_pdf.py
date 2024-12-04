@@ -101,7 +101,11 @@ def generate_pdf(df, selected_reports):
         
         # Checking for the existence of the month column in the table
         if 'Month' not in df.columns:
-            df['Month'] = df['Date'].to_period('M')
+            df['Month'] = df['Date'].dt.to_period('M')
+
+        # Sales by month and region
+        sales_by_month_region = df.groupby(['Month', 'Region'])['Sales'].sum().unstack()
+        
 
 
 

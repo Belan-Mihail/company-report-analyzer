@@ -18,7 +18,11 @@ def generate_pdf(df, selected_reports):
     
     # if report1 in selected_reports:
     if 'report1' in selected_reports:
-        region_sales = df.groupby('region')['sales'].sum().sort_values(ascending=False)
+        region_sales = df.groupby('Region')['Sales'].sum().sort_values(ascending=False)
+        print(region_sales)
+        sns.barplot(x=region_sales.index, y=region_sales.values)
+        plt.title('Sales by region')
+        plt.show()
         
 
     # if report2 in selected_reports:

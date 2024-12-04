@@ -6,17 +6,20 @@ from matplotlib.backends.backend_pdf import PdfPages
 # 1 Loading data from sales_data.csv
 df = pd.read_csv('sales_data.csv')
 
-selected_reports = ['report1', 'report3', 'report6', 'report8']
+selected_reports = ['report1']
 
 def generate_pdf(df, selected_reports):
 
+    df = pd.read_csv('sales_data.csv')
+
     # Converting the 'Date' column to date format
     df['Date'] = pd.to_datetime(df['Date'])
-    print(df.head())
+    
     
     # if report1 in selected_reports:
     if 'report1' in selected_reports:
-        print('hello report1')
+        region_sales = df.groupby('region')['sales'].sum().sort_values(ascending=False)
+        
 
     # if report2 in selected_reports:
     if 'report2' in selected_reports:

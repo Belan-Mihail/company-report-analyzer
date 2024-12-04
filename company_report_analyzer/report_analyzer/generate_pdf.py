@@ -75,7 +75,15 @@ def generate_pdf(df, selected_reports):
         
         # Average sales by region
         region_avg_sale = df.groupby('Region')['Sales'].mean()
-        print(region_avg_sale)
+        
+        # Shorten region name and rotate x 
+        region_avg_sale.index = region_avg_sale.index.str.slice(0,10)
+        plt.xticks(rotation=45)
+
+        # Plotting graph
+        sns.barplot(x=region_avg_sale.index, y=region_avg_sale.values)
+        plt.title('Average sales by region')
+        plt.show()
 
     # if report6 in selected_reports:
     if 'report6' in selected_reports:

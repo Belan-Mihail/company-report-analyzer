@@ -10,6 +10,9 @@ selected_reports = ['report1', 'report3', 'report6', 'report8']
 
 def generate_pdf(df, selected_reports):
 
+    # Converting the 'Date' column to date format
+    df['Date'] = pd.to_datetime(df['Date'])
+    print(df.head())
     
     # if report1 in selected_reports:
     if 'report1' in selected_reports:

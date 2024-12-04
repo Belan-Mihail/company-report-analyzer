@@ -116,5 +116,7 @@ def generate_pdf(df, selected_reports):
         # Percentage distribution of sales by region
         region_percentage_by_region = round(df.groupby('Region')['Sales'].sum() / df['Sales'].sum() * 100, 2)
         print(region_percentage_by_region)
+        company_percentage_by_region = round(df.groupby('Company')['Sales'].sum() / df['Sales'].sum() * 100, 2)
+        print(company_percentage_by_region)
 
 generate_pdf(df, selected_reports)

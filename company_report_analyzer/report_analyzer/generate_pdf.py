@@ -58,6 +58,10 @@ def generate_pdf(df, selected_reports):
         # Sales by month
         sales_by_month = df.groupby('Month')['Sales'].sum()
 
+        # Plotting a graph
+        sales_by_month.plot(kind='line', title='Sales by month')
+        
+
         
 
     

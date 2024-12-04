@@ -6,7 +6,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 # 1 Loading data from sales_data.csv
 df = pd.read_csv('sales_data.csv')
 
-selected_reports = ['report3']
+selected_reports = ['report4']
 
 def generate_pdf(df, selected_reports):
 
@@ -29,7 +29,7 @@ def generate_pdf(df, selected_reports):
         sns.barplot(x=region_sales.index, y=region_sales.values)
         plt.title('Sales by region')
         plt.xticks(rotation=45) # Rotate captions to improve readability
-        # plt.show()
+        
         
 
     # if report2 in selected_reports:
@@ -46,7 +46,7 @@ def generate_pdf(df, selected_reports):
         sns.barplot(x=company_sales.index, y=company_sales.values)
         plt.title('Sales by companies')
         plt.xticks(rotation=45)
-        plt.show()
+        
 
     
     # if report3 in selected_reports:
@@ -60,14 +60,15 @@ def generate_pdf(df, selected_reports):
 
         # Plotting a graph
         sales_by_month.plot(kind='line', title='Sales by month')
-        
-
-        
-
+              
     
     # if report4 in selected_reports:
     if 'report4' in selected_reports:
-        print('hello report4')
+        
+        # Sales Distribution
+        plt.hist(df['Sales'], bins=20, color='skyblue', edgecolor='black')
+        plt.title('Sales Distribution')
+        
     
     # if report5 in selected_reports:
     if 'report5' in selected_reports:

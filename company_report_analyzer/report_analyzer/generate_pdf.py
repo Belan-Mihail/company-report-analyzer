@@ -6,7 +6,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 # 1 Loading data from sales_data.csv
 df = pd.read_csv('sales_data.csv')
 
-selected_reports = ['report1']
+selected_reports = ['report2']
 
 def generate_pdf(df, selected_reports):
 
@@ -34,7 +34,13 @@ def generate_pdf(df, selected_reports):
 
     # if report2 in selected_reports:
     if 'report2' in selected_reports:
-        print('hello report2')
+        
+        # group sales by company
+        company_sales = df.groupby('Company')['Sales'].sum().sort_values(ascending=False)
+        print(company_sales)
+
+        
+
     
     # if report3 in selected_reports:
     if 'report3' in selected_reports:

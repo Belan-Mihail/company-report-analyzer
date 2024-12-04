@@ -6,7 +6,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 # 1 Loading data from sales_data.csv
 df = pd.read_csv('sales_data.csv')
 
-selected_reports = ['report5']
+selected_reports = ['report6']
 
 def generate_pdf(df, selected_reports):
 
@@ -87,7 +87,9 @@ def generate_pdf(df, selected_reports):
 
     # if report6 in selected_reports:
     if 'report6' in selected_reports:
-        print('hello report6')
+        
+        # Correlation between sales and dates
+        corr = df[['Sales', 'Date']].corr()
 
     # if report7 in selected_reports:
     if 'report7' in selected_reports:

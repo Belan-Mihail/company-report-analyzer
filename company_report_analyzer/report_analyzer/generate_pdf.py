@@ -6,7 +6,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 # 1 Loading data from sales_data.csv
 df = pd.read_csv('sales_data.csv')
 
-selected_reports = ['report7']
+selected_reports = ['report8']
 
 def generate_pdf(df, selected_reports):
 
@@ -110,11 +110,11 @@ def generate_pdf(df, selected_reports):
         sales_by_month_region.plot(kind='line', title='Sale trends by month and region')
         
         
-
-
-
     # if report8 in selected_reports:
     if 'report8' in selected_reports:
-        print('hello report8')
+        
+        # Percentage distribution of sales by region
+        region_percentage_by_region = round(df.groupby('Region')['Sales'].sum() / df['Sales'].sum() * 100, 2)
+        print(region_percentage_by_region)
 
 generate_pdf(df, selected_reports)

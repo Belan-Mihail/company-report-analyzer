@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import UploadFileForm
+import pandas as pd
 
 
 def process_file(uploaded_file, reports):
-    print('hello')
+    
+    # Read the uploaded CSV file
+    df = pd.read_csv(uploaded_file)
 
 def upload_file(request):
     if request.method == 'POST':

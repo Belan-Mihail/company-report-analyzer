@@ -27,12 +27,14 @@ def upload_file(request):
             selected_reports = request.POST.getlist('reports')
             
             #Processing a file with selected reports
-            process_file(uploaded_file, selected_reports)
+            pdf_output = process_file(uploaded_file, selected_reports)
 
-            # here can added logic
-            return HttpResponse('File uploaded successfully')
+            # Return the PDF as a response
+            response = HttpResponse(pdf_output, content_type='application/pdf')
+            response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+            return response
         else:
-        # Form is invalid, return empty form to display errors
+            # Form is invalid, return empty form to display errors
             form = UploadFileForm()
     else:
         form = UploadFileForm()

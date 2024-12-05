@@ -149,4 +149,5 @@ def generate_pdf(df, selected_reports):
         pdf_pages.savefig()
         plt.close()
         
-
+    # Close the PdfPages object and save to the buffer
+    pdf_pages.close()

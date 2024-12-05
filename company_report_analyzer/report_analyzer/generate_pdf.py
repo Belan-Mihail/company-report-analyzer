@@ -72,8 +72,11 @@ def generate_pdf(df, selected_reports):
     if 'report4' in selected_reports:
         
         # Sales Distribution
+        plt.figure(figsize=(8, 6))
         plt.hist(df['Sales'], bins=20, color='skyblue', edgecolor='black')
         plt.title('Sales Distribution')
+        pdf_pages.savefig()
+        plt.close()
         
     
     # if report5 in selected_reports:

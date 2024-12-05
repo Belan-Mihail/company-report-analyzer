@@ -52,7 +52,6 @@ def generate_pdf(df, selected_reports):
         plt.close()
         
 
-    
     # if report3 in selected_reports:
     if 'report3' in selected_reports:
         
@@ -63,7 +62,10 @@ def generate_pdf(df, selected_reports):
         sales_by_month = df.groupby('Month')['Sales'].sum()
 
         # Plotting a graph
+        plt.figure(figsize=(8, 6))
         sales_by_month.plot(kind='line', title='Sales by month')
+        pdf_pages.savefig()
+        plt.close()
               
     
     # if report4 in selected_reports:

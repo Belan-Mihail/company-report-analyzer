@@ -16,6 +16,8 @@ def process_file(uploaded_file, selected_reports):
     
     # Read the uploaded CSV file
     df = pd.read_csv(uploaded_file)
+
+    df = df[:20]
     
     # Generate the PDF using the selected reports
     pdf_output = generate_pdf(df, selected_reports)

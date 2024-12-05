@@ -2,12 +2,19 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import UploadFileForm
 import pandas as pd
+from .generate_pdf import generate_pdf
 
 
-def process_file(uploaded_file, reports):
+def process_file(uploaded_file, selected_reports):
     
     # Read the uploaded CSV file
     df = pd.read_csv(uploaded_file)
+
+    # Generate the PDF using the selected reports
+    pdf_output = generate_pdf(df, selected_reports)
+
+    # Return PDF file
+    return pdf_output
 
 def upload_file(request):
     if request.method == 'POST':
@@ -18,7 +25,7 @@ def upload_file(request):
 
             # We receive the selected reports
             selected_reports = request.POST.getlist('reports')
-            print("Selected reports:", selected_reports)
+            
             #Processing a file with selected reports
             process_file(uploaded_file, selected_reports)
 

@@ -146,6 +146,7 @@ def generate_pdf(df, selected_reports):
         percentage_by_companies.plot(kind='pie', autopct='%1.1f%%', title='Percentage distribution of sales by companies', ax=axes[1] )
 
         plt.tight_layout()
-        plt.show()
+        pdf_pages.savefig()
+        plt.close()
         
 

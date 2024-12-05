@@ -14,7 +14,6 @@ def generate_pdf(df, selected_reports):
     # Converting the 'Date' column to date format
     df['Date'] = pd.to_datetime(df['Date'])
     
-    
     # if report1 in selected_reports:
     if 'report1' in selected_reports:
 
@@ -25,9 +24,12 @@ def generate_pdf(df, selected_reports):
         region_sales.index = region_sales.index.str.slice(0,7)
 
         # Plotting a graph
+        plt.figure(figsize=(8,6))
         sns.barplot(x=region_sales.index, y=region_sales.values)
         plt.title('Sales by region')
         plt.xticks(rotation=45) # Rotate captions to improve readability
+        pdf_pages.savefig()
+        plt.close
         
         
 

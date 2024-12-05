@@ -10,13 +10,12 @@ from io import BytesIO
 def process_file(uploaded_file, selected_reports):
     
     
-    file_content = uploaded_file.read() # Декодируем содержимое в строку
-    print(file_content)
-    file_io = BytesIO(file_content)
-    file_io.seek(0)
+    # Move to the beginning before it convert in df
+    uploaded_file.seek(0)
+    
     
     # Read the uploaded CSV file
-    df = pd.read_csv(file_io)
+    df = pd.read_csv(uploaded_file)
     
     # Generate the PDF using the selected reports
     pdf_output = generate_pdf(df, selected_reports)

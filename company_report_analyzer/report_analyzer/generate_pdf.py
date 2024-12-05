@@ -151,3 +151,7 @@ def generate_pdf(df, selected_reports):
         
     # Close the PdfPages object and save to the buffer
     pdf_pages.close()
+
+    # Move to the beginning of the BytesIO buffer before returning it
+    pdf_buffer.seek(0)
+    return pdf_buffer

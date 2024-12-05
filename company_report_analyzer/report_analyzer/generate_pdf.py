@@ -2,11 +2,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.backends.backend_pdf import PdfPages
+from io import BytesIO
 
 
 def generate_pdf(df, selected_reports):
 
-    
+    # Create a BytesIO object to hold the PDF content
+    pdf_buffer = BytesIO()
+    pdf_pages = PdfPages(pdf_buffer)
 
     # Converting the 'Date' column to date format
     df['Date'] = pd.to_datetime(df['Date'])

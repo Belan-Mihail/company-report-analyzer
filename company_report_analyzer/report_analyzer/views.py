@@ -7,8 +7,19 @@ from .generate_pdf import generate_pdf
 
 def process_file(uploaded_file, selected_reports):
     
-    # Read the uploaded CSV file
+    
+    if uploaded_file.size == 0:
+        print('file is empty')
     df = pd.read_csv(uploaded_file)
+    print(df.head()) 
+    file_path = uploaded_file.path
+    print(f"Путь к файлу: {file_path}")
+
+    
+
+    # Read the uploaded CSV file
+    df = pd.read_csv(file_path)
+    print(df.head()) 
 
     # Generate the PDF using the selected reports
     pdf_output = generate_pdf(df, selected_reports)
@@ -35,7 +46,7 @@ def upload_file(request):
             return response
         else:
             # Form is invalid, return empty form to display errors
-            form = UploadFileForm()
+            return render(request, 'upload.html', {'form': form})
     else:
         form = UploadFileForm()
         return render(request, 'upload.html', {'form': form})

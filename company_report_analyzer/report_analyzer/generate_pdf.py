@@ -90,9 +90,11 @@ def generate_pdf(df, selected_reports):
         plt.xticks(rotation=45)
 
         # Plotting graph
+        plt.figure(figsize=(8, 6))
         sns.barplot(x=region_avg_sale.index, y=region_avg_sale.values)
         plt.title('Average sales by region')
-        plt.show()
+        pdf_pages.savefig()
+        plt.close()
 
     # if report6 in selected_reports:
     if 'report6' in selected_reports:

@@ -24,7 +24,7 @@ def generate_pdf(df, selected_reports):
         region_sales.index = region_sales.index.str.slice(0,7)
 
         # Plotting a graph
-        plt.figure(figsize=(8,6))
+        plt.figure(figsize=(10,8))
         sns.barplot(x=region_sales.index, y=region_sales.values)
         plt.title('Sales by region')
         plt.xticks(rotation=45) # Rotate captions to improve readability
@@ -44,7 +44,7 @@ def generate_pdf(df, selected_reports):
         company_sales.index = company_sales.index.str.slice(0,10)
 
         # Plotting a graph
-        plt.figure(figsize=(8,6))
+        plt.figure(figsize=(10,8))
         sns.barplot(x=company_sales.index, y=company_sales.values)
         plt.title('Sales by companies')
         plt.xticks(rotation=45)
@@ -62,7 +62,7 @@ def generate_pdf(df, selected_reports):
         sales_by_month = df.groupby('Month')['Sales'].sum()
 
         # Plotting a graph
-        plt.figure(figsize=(8, 6))
+        plt.figure(figsize=(10, 8))
         sales_by_month.plot(kind='line', title='Sales by month')
         pdf_pages.savefig()
         plt.close()
@@ -72,7 +72,7 @@ def generate_pdf(df, selected_reports):
     if 'report4' in selected_reports:
         
         # Sales Distribution
-        plt.figure(figsize=(8, 6))
+        plt.figure(figsize=(10, 8))
         plt.hist(df['Sales'], bins=20, color='skyblue', edgecolor='black')
         plt.title('Sales Distribution')
         pdf_pages.savefig()
@@ -90,7 +90,7 @@ def generate_pdf(df, selected_reports):
         plt.xticks(rotation=45)
 
         # Plotting graph
-        plt.figure(figsize=(8, 6))
+        plt.figure(figsize=(10, 8))
         sns.barplot(x=region_avg_sale.index, y=region_avg_sale.values)
         plt.title('Average sales by region')
         pdf_pages.savefig()
@@ -103,7 +103,7 @@ def generate_pdf(df, selected_reports):
         corr = df[['Sales', 'Date']].corr()
 
         # Add graph
-        plt.figure(figsize=(8, 6))
+        plt.figure(figsize=(10, 8))
         sns.heatmap(corr, annot=True, cmap='coolwarm', cbar=True)
         plt.title('Correlation between sales and dates')
         pdf_pages.savefig()
@@ -121,7 +121,7 @@ def generate_pdf(df, selected_reports):
         sales_by_month_region = df.groupby(['Region', 'Month'])['Sales'].sum()
 
         # Create graph
-        plt.figure(figsize=(8, 6))
+        plt.figure(figsize=(10, 8))
         sales_by_month_region.plot(kind='line', title='Sale trends by month and region')
         pdf_pages.savefig()
         plt.close()

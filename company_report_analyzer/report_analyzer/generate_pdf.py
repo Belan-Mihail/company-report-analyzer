@@ -121,7 +121,10 @@ def generate_pdf(df, selected_reports):
         sales_by_month_region = df.groupby(['Region', 'Month'])['Sales'].sum()
 
         # Create graph
+        plt.figure(figsize=(8, 6))
         sales_by_month_region.plot(kind='line', title='Sale trends by month and region')
+        pdf_pages.savefig()
+        plt.close()
         
         
     # if report8 in selected_reports:

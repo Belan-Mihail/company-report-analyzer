@@ -3,24 +3,21 @@ from django.http import HttpResponse
 from .forms import UploadFileForm
 import pandas as pd
 from .generate_pdf import generate_pdf
+from io import BytesIO
+
 
 
 def process_file(uploaded_file, selected_reports):
     
     
-    if uploaded_file.size == 0:
-        print('file is empty')
-    df = pd.read_csv(uploaded_file)
-    print(df.head()) 
-    file_path = uploaded_file.path
-    print(f"Путь к файлу: {file_path}")
-
+    file_content = uploaded_file.read() # Декодируем содержимое в строку
+    print(file_content)
+    file_io = BytesIO(file_content)
+    file_io.seek(0)
     
-
     # Read the uploaded CSV file
-    df = pd.read_csv(file_path)
-    print(df.head()) 
-
+    df = pd.read_csv(file_io)
+    
     # Generate the PDF using the selected reports
     pdf_output = generate_pdf(df, selected_reports)
 

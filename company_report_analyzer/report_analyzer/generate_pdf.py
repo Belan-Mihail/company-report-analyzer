@@ -44,10 +44,12 @@ def generate_pdf(df, selected_reports):
         company_sales.index = company_sales.index.str.slice(0,10)
 
         # Plotting a graph
+        plt.figure(figsize=(8,6))
         sns.barplot(x=company_sales.index, y=company_sales.values)
         plt.title('Sales by companies')
         plt.xticks(rotation=45)
-        plt.show()
+        pdf_pages.savefig()
+        plt.close()
         
 
     

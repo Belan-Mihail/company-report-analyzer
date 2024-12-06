@@ -6,19 +6,19 @@ from .generate_pdf import generate_pdf
 from io import BytesIO
 
 def process_file(uploaded_file, selected_reports):
-    # Перемещаем указатель в начало файла перед чтением
+    # Move the pointer to the beginning of the file before reading
     uploaded_file.seek(0)
     
-    # Чтение загруженного CSV файла
+    # Reading the downloaded CSV file
     df = pd.read_csv(uploaded_file)
 
     df = df[:20]
     
-    # Генерация PDF с использованием выбранных отчетов
+    # Generate PDF using selected reports
     pdf_output = generate_pdf(df, selected_reports)
 
-    # Возвращаем PDF
-    return pdf_output
+    # Get bytes from BytesIO object
+    return pdf_output.getvalue()
 
 def upload_file(request):
     if request.method == 'POST':

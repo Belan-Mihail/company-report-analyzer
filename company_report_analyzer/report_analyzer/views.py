@@ -37,6 +37,8 @@ def upload_file(request):
             response = HttpResponse(pdf_output, content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="report.pdf"'
 
+            response.write('<script type="text/javascript">window.location.href = "/upload/";</script>')
+
             return response
         else:
             # Если форма невалидна, возвращаем ее с ошибками

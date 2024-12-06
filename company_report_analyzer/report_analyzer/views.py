@@ -37,11 +37,7 @@ def upload_file(request):
             response = HttpResponse(pdf_output, content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="report.pdf"'
 
-            # Сохраняем PDF в сессию
-            request.session['pdf_report'] = pdf_output.getvalue()
-            
-            # Перенаправляем сразу на скачивание PDF
-            return redirect('success')
+            return response
 
         else:
             # Если форма невалидна, возвращаем ее с ошибками
@@ -50,21 +46,3 @@ def upload_file(request):
         form = UploadFileForm()
         return render(request, 'upload.html', {'form': form})
 
-
-def success_page(request):
-    # Загружаем PDF из сессии и возвращаем его как файл
-    pdf_output = request.session.get('pdf_report', None)
-
-    if pdf_output:
-        # Воссоздаем объект BytesIO из данных в сессии
-        pdf_output = BytesIO(pdf_output)
-        # Возвращаем PDF как ответ
-        response = HttpResponse(pdf_output, content_type='application/pdf')
-        response['Content-Disposition'] = 'attachment; filename="report.pdf"'
-
-        # Очистка сессионных данных после скачивания
-        del request.session['pdf_report']
-        return response
-    else:
-        # Если PDF не найден, перенаправляем на страницу загрузки
-        return redirect('upload_file')

@@ -74,5 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             alert('Please select at least one report.')
         } 
+        
     })
 })
+

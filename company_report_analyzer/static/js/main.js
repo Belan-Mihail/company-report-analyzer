@@ -73,20 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (checkedCheckboxes.length === 0) {
             event.preventDefault();
             alert('Please select at least one report.')
-        } else {
-            // Если форма отправляется, имитируем клик по кнопке cancelProcessButton
-            cancelProcessButton.classList.remove('visible');
-            modalWindow.classList.remove('visible');
-            cancelProcessButton.classList.add('hidden');
-            modalWindow.classList.add('hidden');
-            fileInput.value = '';  // Очищаем файл
-    
-            // Сбрасываем состояние всех чекбоксов
-            checkboxes.forEach(checkbox => {
-                checkbox.checked = false;
-            });
-        }
-        // Теперь отправляем форму после очистки
-        form.submit();  // Явно отправляем форму
+        } 
     })
 })

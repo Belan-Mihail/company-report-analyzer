@@ -43,9 +43,18 @@ def upload_file(request):
             return redirect('success')
 
         else:
-            # Если форма невалидна, возвращаем ее с ошибками
+            # If the form is invalid, return it with errors
             return render(request, 'upload.html', {'form': form})
     else:
         form = UploadFileForm()
         return render(request, 'upload.html', {'form': form})
 
+def success(request):
+    pdf_base64 = request.session.get('pdf_report_base64', None)
+
+    if pdf_base64:
+        context = {'pdf_available': True}
+    else:
+        context = {'pdf_available': False}
+
+    return render(request, 'success.html', context)

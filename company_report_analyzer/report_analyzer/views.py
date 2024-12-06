@@ -58,3 +58,21 @@ def success(request):
         context = {'pdf_available': False}
 
     return render(request, 'success.html', context)
+
+def download_pdf(request):
+    # Получаем строку base64 из сессии
+    pdf_base64 = request.session.get('pdf_report_base64', None)
+
+    if pdf_base64:
+        # Decode base64 into bytes
+        pdf_output = base64.b64decode(pdf_base64)
+
+        # Return PDF as response
+        response = HttpResponse(pdf_output, content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+
+        # Clear session data after download
+        del request.session['pdf_report_base64']
+        return response
+    else:
+        return redirect('upload_file')

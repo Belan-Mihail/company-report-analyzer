@@ -53,6 +53,6 @@ def upload_file(request):
 def success_page(request):
     # Successful processing page
     return render(request, 'success.html', {
-        'succes_message': 'request processed successfully',
+        'success_message': 'request processed successfully',
         'show_back_button': True
     })

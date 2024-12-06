@@ -6,6 +6,9 @@
     <title>Success Page</title>
 </head>
 <body>
-    
+    <h2>{{ success_message }}</h2>
+    {% if show_back_button %}
+        <a href="{% url 'upload' %}" style="margin-top: 20; display: inline-block;"> Back to Home Page</a>
+    {% endif %}
 </body>
 </html>

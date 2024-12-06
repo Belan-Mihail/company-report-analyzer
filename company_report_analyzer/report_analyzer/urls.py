@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.upload_file, name='upload_file'),
-    path('success/', views.succes_page, name='success'),
+    path('success/', views.success_page, name='success'),
 
 ]

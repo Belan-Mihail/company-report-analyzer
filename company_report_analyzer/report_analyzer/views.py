@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+import base64
 from django.http import HttpResponse
 from .forms import UploadFileForm
 import pandas as pd
@@ -27,17 +28,19 @@ def upload_file(request):
             uploaded_file = request.FILES['file']
             form.save()
 
-            # Получаем выбранные отчеты
+            # Get the selected reports
             selected_reports = request.POST.getlist('reports')
             
-            # Обрабатываем файл с выбранными отчетами
+            # Process the file with the selected reports
             pdf_output = process_file(uploaded_file, selected_reports)
 
-            # Возвращаем PDF как ответ
-            response = HttpResponse(pdf_output, content_type='application/pdf')
-            response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+            # Convert PDF to base64 string
+            pdf_base64 = base64.b64encode(pdf_output).decode('utf-8')
 
-            return response
+            # Save base64 string in session
+            request.session['pdf_report_base64'] = pdf_base64
+
+            return redirect('success')
 
         else:
             # Если форма невалидна, возвращаем ее с ошибками

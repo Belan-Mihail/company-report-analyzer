@@ -37,7 +37,11 @@ def upload_file(request):
             response = HttpResponse(pdf_output, content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="report.pdf"'
 
-            response.write('<script type="text/javascript">window.location.href = "/upload/";</script>')
+            # Сохраняем PDF в сессию
+            request.session['pdf_report'] = pdf_output
+            
+            # Перенаправляем сразу на скачивание PDF
+            return redirect('success')
 
             return response
         else:

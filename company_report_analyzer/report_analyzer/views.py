@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import UploadFileForm
 import pandas as pd
@@ -41,7 +41,7 @@ def upload_file(request):
             # Return the PDF as a response
             response = HttpResponse(pdf_output, content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="report.pdf"'
-            return response
+            return redirect('success')
         else:
             # Form is invalid, return empty form to display errors
             return render(request, 'upload.html', {'form': form})

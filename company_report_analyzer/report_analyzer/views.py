@@ -49,3 +49,10 @@ def upload_file(request):
         form = UploadFileForm()
         return render(request, 'upload.html', {'form': form})
     
+
+def success_page(request):
+    # Successful processing page
+    return render(request, 'success.html', {
+        'succes_message': 'request processed successfully',
+        'show_back_button': True
+    })

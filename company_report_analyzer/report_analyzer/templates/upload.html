@@ -17,14 +17,16 @@
       <form
         method="post"
         enctype="multipart/form-data"
-        class="bg-cyan-300 rounded p-6 shadow-lg max-w-md"
+        class="bg-cyan-300 rounded p-6 shadow-lg"
       >
         {% csrf_token %} {{ form|crispy }}
-
-        <button type="button" id="select-reports_button">Select reports</button>
-        <button type="button" id="cancel_button" class="text-3xl text-cyan-600">
+        <div class="flex items-center justify-center gap-4">
+          <button type="button" id="select-reports_button" class="p-2 bg-orange-500">Select reports</button>
+          <button type="button" id="cancel_button" class="bg-red-500 text-white">
           Cancel
         </button>
+        </div>
+        
         <div class="modal hidden" id="modal">
           <div class="modal-content">
             <h3 class="modal-title text-3xl text-cyan-600">

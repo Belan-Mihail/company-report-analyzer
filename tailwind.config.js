@@ -1,7 +1,7 @@
 module.exports = {
   content: [
     './templates/*.html',
-    './static/js/*.js',  // Укажи путь к JS, если ты используешь динамическую генерацию стилей
+    './static/js/*.js',  
   ],
   theme: {
     extend: {},

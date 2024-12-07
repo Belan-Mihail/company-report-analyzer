@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Report Analyzer</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
     
     <script src="{% static 'js/main.js' %}"></script>
 </head>
@@ -17,10 +18,10 @@
         {{ form|crispy }}
     
         <button type="button" id="select-reports_button">Select reports</button>
-        <button type="button" id="cancel_button">Cancel</button>
+        <button type="button" id="cancel_button" class="text-3xl text-cyan-600">Cancel</button>
         <div class="modal hidden" id="modal">
             <div class="modal-content">
-            <h3 class="modal-title">Select the required reports</h3> 
+            <h3 class="modal-title text-3xl text-cyan-600">Select the required reports</h3> 
             <div class="modal-content">
                 <div class="modal-content-inputs">
                     <input type="checkbox" name="reports" value="report1">Sales by region

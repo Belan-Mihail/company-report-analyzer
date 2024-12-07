@@ -1,51 +1,79 @@
-{% load static %}
-{% load crispy_forms_tags %}
+{% load static %} {% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Company Report Analyzer</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link href="{% static 'css/output.css' %}" rel="stylesheet">
-    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link href="{% static 'css/output.css' %}" rel="stylesheet" />
+
     <script src="{% static 'js/main.js' %}"></script>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div class="flex flex-col gap-4 items-center justify-center mt-10 p-8">
-        <h1 class="text-2xl text-[rgba(61,61,61,1)]">Company Report Analyzer</h1>
-        <form method="post" enctype="multipart/form-data" class="bg-cyan-300 rounded p-6 shadow-lg max-w-md">
-        {% csrf_token %}
-        {{ form|crispy }}
-    
+      <h1 class="text-2xl text-[rgba(61,61,61,1)]">Company Report Analyzer</h1>
+      <form
+        method="post"
+        enctype="multipart/form-data"
+        class="bg-cyan-300 rounded p-6 shadow-lg max-w-md"
+      >
+        {% csrf_token %} {{ form|crispy }}
+
         <button type="button" id="select-reports_button">Select reports</button>
-        <button type="button" id="cancel_button" class="text-3xl text-cyan-600">Cancel</button>
+        <button type="button" id="cancel_button" class="text-3xl text-cyan-600">
+          Cancel
+        </button>
         <div class="modal hidden" id="modal">
+          <div class="modal-content">
+            <h3 class="modal-title text-3xl text-cyan-600">
+              Select the required reports
+            </h3>
             <div class="modal-content">
-            <h3 class="modal-title text-3xl text-cyan-600">Select the required reports</h3> 
-            <div class="modal-content">
-                <div class="modal-content-inputs">
-                    <input type="checkbox" name="reports" value="report1">Sales by region
-                    <input type="checkbox" name="reports" value="report2">Sales by companies
-                    <input type="checkbox" name="reports" value="report3">Sales by month
-                    <input type="checkbox" name="reports" value="report4">Sales Distribution
-                    <input type="checkbox" name="reports" value="report5">Average sales by region
-                    <input type="checkbox" name="reports" value="report6">Correlation between sales and dates
-                    <input type="checkbox" name="reports" value="report7">Sale trends by month and region
-                    <input type="checkbox" name="reports" value="report8">Percentage distribution of sales by region/companies
-                </div>
-                <div class="modal-content-form-button">
-                    <button type="submit" id="confirm-processing-button">Start processing</button>
-                    <button  id="cancel-processing-button" type="button">Cancel processing</button>
-                </div>
+              <div class="modal-content-inputs">
+                <input type="checkbox" name="reports" value="report1" />Sales by
+                region
+                <input type="checkbox" name="reports" value="report2" />Sales by
+                companies
+                <input type="checkbox" name="reports" value="report3" />Sales by
+                month
+                <input type="checkbox" name="reports" value="report4" />Sales
+                Distribution
+                <input type="checkbox" name="reports" value="report5" />Average
+                sales by region
+                <input
+                  type="checkbox"
+                  name="reports"
+                  value="report6"
+                />Correlation between sales and dates
+                <input type="checkbox" name="reports" value="report7" />Sale
+                trends by month and region
+                <input
+                  type="checkbox"
+                  name="reports"
+                  value="report8"
+                />Percentage distribution of sales by region/companies
+              </div>
+              <div class="modal-content-form-button">
+                <button type="submit" id="confirm-processing-button">
+                  Start processing
+                </button>
+                <button id="cancel-processing-button" type="button">
+                  Cancel processing
+                </button>
+              </div>
             </div>
-            </div>
-        </div> 
-    </form>
+          </div>
+        </div>
+      </form>
+      <div>
+        <p>Made by Bilan Mykhailo</p>
+        <div>
+            <a target="_blank" rel="noopener noreferrer" href="www.linkedin.com/in/mykhailo-bilan">LinkedIn Profile</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/Belan-Mihail">Github Profile</a>
+        </div>
+      </div>
     </div>
-    
-    
-</body>
+  </body>
 </html>

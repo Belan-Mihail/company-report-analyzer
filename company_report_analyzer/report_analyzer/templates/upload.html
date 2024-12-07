@@ -13,7 +13,8 @@
     <script src="{% static 'js/main.js' %}"></script>
 </head>
 <body>
-    <form method="post" enctype="multipart/form-data">
+    <div class="flex items-center justify-center mt-10 p-8">
+        <form method="post" enctype="multipart/form-data" class="bg-cyan-300 rounded p-6 shadow-lg w-full max-w-md">
         {% csrf_token %}
         {{ form|crispy }}
     
@@ -41,6 +42,8 @@
             </div>
         </div> 
     </form>
+    </div>
+    
     
 </body>
 </html>

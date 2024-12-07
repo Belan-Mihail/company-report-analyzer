@@ -17,3 +17,7 @@
     pointer-events: all;
     transition: all 1 ease-in;
 }
+
+input[type="file"] {
+    color: rgb(61, 61, 61);
+}

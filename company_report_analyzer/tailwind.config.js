@@ -5,7 +5,11 @@ module.exports = {
     './report_analyzer/**/*.html',  // Если есть HTML-шаблоны в приложениях
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'custom': 'rgb(61, 61, 61)', 
+      },
+    },
   },
   plugins: [],
 }

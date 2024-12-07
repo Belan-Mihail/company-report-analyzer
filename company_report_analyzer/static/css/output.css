@@ -625,9 +625,24 @@ video {
   line-height: 2.25rem;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-\[rgb\(13\2c 176\2c 198\)\] {
+  --tw-text-opacity: 1;
+  color: rgb(13 176 198 / var(--tw-text-opacity, 1));
 }
 
 .text-custom {
@@ -638,6 +653,11 @@ video {
 .text-cyan-600 {
   --tw-text-opacity: 1;
   color: rgb(8 145 178 / var(--tw-text-opacity, 1));
+}
+
+.text-cstm-blue {
+  --tw-text-opacity: 1;
+  color: rgb(13 176 198 / var(--tw-text-opacity, 1));
 }
 
 .shadow-lg {
@@ -668,4 +688,9 @@ video {
 
 input[type="file"] {
   color: rgb(61, 61, 61);
+}
+
+.hover\:text-cstm-blue:hover {
+  --tw-text-opacity: 1;
+  color: rgb(13 176 198 / var(--tw-text-opacity, 1));
 }

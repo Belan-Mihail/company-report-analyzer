@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'custom': 'rgb(61, 61, 61)', 
+        'cstm-blue': 'rgb(13, 176, 198)', 
       },
     },
   },

@@ -15,7 +15,7 @@
 <body>
     
     <div class="flex flex-col gap-4 items-center justify-center mt-10 p-8">
-        <h1>Company Report Analyzer</h1>
+        <h1 class="text-2xl text-[rgba(61,61,61,1)]">Company Report Analyzer</h1>
         <form method="post" enctype="multipart/form-data" class="bg-cyan-300 rounded p-6 shadow-lg max-w-md">
         {% csrf_token %}
         {{ form|crispy }}

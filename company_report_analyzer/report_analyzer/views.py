@@ -60,7 +60,7 @@ def success(request):
     return render(request, 'success.html', context)
 
 def download_pdf(request):
-    # Получаем строку base64 из сессии
+    # Get base64 string from session
     pdf_base64 = request.session.get('pdf_report_base64', None)
 
     if pdf_base64:

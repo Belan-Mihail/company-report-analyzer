@@ -20,9 +20,9 @@
         class="bg-cyan-300 rounded p-6 shadow-lg"
       >
         {% csrf_token %} {{ form|crispy }}
-        <div class="flex items-center justify-center gap-4">
+        <div class="flex items-center justify-around gap-4 mt-4">
           <button type="button" id="select-reports_button" class="primary-button">Select reports</button>
-          <button type="button" id="cancel_button" class="bg-red-500 text-white">
+          <button type="button" id="cancel_button" class="">
           Cancel
         </button>
         </div>

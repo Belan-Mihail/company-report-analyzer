@@ -23,10 +23,10 @@ input[type="file"] {
 }
 
 .primary-button {
-    background-color: orange;
+    background-color: #52fb0c;
     color: white;
     padding: 8px;
-    border: 1px solid orange;
+    border: 1px solid #52fb0c;
     cursor: pointer;
     border-radius: 8px;
     transition: background-color .3 ease-in;

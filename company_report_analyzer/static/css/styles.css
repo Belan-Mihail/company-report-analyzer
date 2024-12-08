@@ -41,3 +41,7 @@ input[type="file"] {
     background-color: #4fdd12;
     transform: scale(1)
 }
+
+.primary-button:focus {
+    background-color: #58fb13;
+}

@@ -22,6 +22,10 @@ input[type="file"] {
     color: rgb(61, 61, 61);
 }
 
+* {
+    outline: none;
+}
+
 .primary-button {
     background-color: #52fb0c;
     color: white;
@@ -44,7 +48,8 @@ input[type="file"] {
 }
 
 .primary-button:focus {
-    background-color: #58fb13;
+    background-color: #69e235;
+    outline: #4fe50e;
 }
 
 .secondary-button {
@@ -68,4 +73,10 @@ input[type="file"] {
     background-color: #e38811;
     transform: scale(1);
     border: 1px solid #e38811;
+}
+
+.secondary-button:focus {
+    background-color: #f79d26;
+    border: 1px solid #f79d26;
+    outline: #fb920c;
 }

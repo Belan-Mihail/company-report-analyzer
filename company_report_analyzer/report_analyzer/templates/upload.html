@@ -28,12 +28,12 @@
         </div>
         
         <div class="modal hidden" id="modal">
-          <div class="modal-content">
+          <div class="modal-content flex flex-col gap-4">
             <h3 class="modal-title text-3xl text-cyan-600">
               Select the required reports
             </h3>
             <div class="modal-content">
-              <div class="modal-content-inputs">
+              <div class="modal-content-inputs flex flex-col gap-2">
                 <input type="checkbox" name="reports" value="report1" />Sales by
                 region
                 <input type="checkbox" name="reports" value="report2" />Sales by
@@ -57,7 +57,9 @@
                   value="report8"
                 />Percentage distribution of sales by region/companies
               </div>
-              <div class="modal-content-form-button">
+              
+            </div>
+            <div class="form-button">
                 <button type="submit" id="confirm-processing-button" class="primary-button">
                   Start processing
                 </button>
@@ -65,7 +67,6 @@
                   Cancel processing
                 </button>
               </div>
-            </div>
           </div>
         </div>
       </form>

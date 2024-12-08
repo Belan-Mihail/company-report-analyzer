@@ -39,7 +39,7 @@ input[type="file"] {
 }
 
 .primary-button:active {
-    background-color: #4fdd12;
+    background-color: #49c912;
     transform: scale(1)
 }
 
@@ -61,4 +61,11 @@ input[type="file"] {
 .secondary-button:hover {
     background-color: #f49519;
     transform: scale(1.05);
+    border: 1px solid #f49519;
+}
+
+.secondary-button:active {
+    background-color: #e38811;
+    transform: scale(1);
+    border: 1px solid #e38811;
 }

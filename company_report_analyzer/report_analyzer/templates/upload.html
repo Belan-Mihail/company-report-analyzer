@@ -21,7 +21,7 @@
       >
         {% csrf_token %} {{ form|crispy }}
         <div class="flex items-center justify-center gap-4">
-          <button type="button" id="select-reports_button" class="p-2 bg-orange-500">Select reports</button>
+          <button type="button" id="select-reports_button" class="primary-button">Select reports</button>
           <button type="button" id="cancel_button" class="bg-red-500 text-white">
           Cancel
         </button>
@@ -58,7 +58,7 @@
                 />Percentage distribution of sales by region/companies
               </div>
               <div class="modal-content-form-button">
-                <button type="submit" id="confirm-processing-button">
+                <button type="submit" id="confirm-processing-button" class="primary-button">
                   Start processing
                 </button>
                 <button id="cancel-processing-button" type="button">

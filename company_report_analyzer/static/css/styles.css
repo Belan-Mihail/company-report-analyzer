@@ -36,3 +36,8 @@ input[type="file"] {
     background-color: #55f113;
     transform: scale(1.05)
 }
+
+.primary-button:active {
+    background-color: #4fdd12;
+    transform: scale(1)
+}

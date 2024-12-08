@@ -26,6 +26,7 @@ input[type="file"] {
     background-color: #52fb0c;
     color: white;
     padding: 8px;
+    min-width: 120px;
     border: 1px solid #52fb0c;
     cursor: pointer;
     border-radius: 8px;
@@ -44,4 +45,15 @@ input[type="file"] {
 
 .primary-button:focus {
     background-color: #58fb13;
+}
+
+.secondary-button {
+    background-color: #fb920c;
+    color: white;
+    padding: 8px;
+    min-width: 120px;
+    border: 1px solid #fb920c;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color .3 ease-in;
 }

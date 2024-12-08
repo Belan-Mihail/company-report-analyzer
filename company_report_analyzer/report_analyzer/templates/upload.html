@@ -22,7 +22,7 @@
         {% csrf_token %} {{ form|crispy }}
         <div class="flex items-center justify-around gap-4 mt-4">
           <button type="button" id="select-reports_button" class="primary-button">Select reports</button>
-          <button type="button" id="cancel_button" class="">
+          <button type="button" id="cancel_button" class="secondary-button">
           Cancel
         </button>
         </div>
@@ -61,7 +61,7 @@
                 <button type="submit" id="confirm-processing-button" class="primary-button">
                   Start processing
                 </button>
-                <button id="cancel-processing-button" type="button">
+                <button id="cancel-processing-button" type="button" class="secondary-button">
                   Cancel processing
                 </button>
               </div>

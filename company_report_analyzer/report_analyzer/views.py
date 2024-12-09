@@ -16,6 +16,10 @@ def process_file(uploaded_file, selected_reports):
     # Expected headers
     expected_headers = ['Date', 'Sales', 'Region', 'Name', 'Company']
 
+    # Check that all expected headers are present in the file
+    if not all(header in df.columns for header in expected_headers):
+        return None  # Return None if the headers do not match
+
     df = df[:20]
     
     # Generate PDF using selected reports

@@ -29,6 +29,21 @@
         </button>
         </div>
         
+        <div class="error-modal hidden" id="error-modal">
+          <div class="modal-content flex flex-col gap-4">
+            <h3 class="modal-title text-[#004171] text-xl sm:text-2xl">
+              Error
+            </h3>
+            <p id="modal-error-message" class="text-lg">
+                {% if error_message %}
+                    {{ error_message }}
+                {% else %}
+                    Please upload a CSV file.
+                {% endif %}
+            </p>
+          </div>
+        </div>
+
         <div class="modal hidden" id="modal">
           <div class="modal-content flex flex-col gap-4">
             <h3 class="modal-title text-[#004171] text-xl sm:text-2xl">

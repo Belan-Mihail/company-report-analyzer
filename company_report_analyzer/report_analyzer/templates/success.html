@@ -1,24 +1,32 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Success</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link href="{% static 'css/output.css' %}" rel="stylesheet" />
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <title>Report page</title>
   </head>
   <body>
-    <div class="flex flex-col gap-4 items-center justify-center mt-10 p-8">
-      <h1>Report generated successfully!</h1>
+    <div class="flex justify-center items-center">
+        <div class="flex flex-col gap-4 items-center justify-center mt-10 p-8 bg-cyan-300 rounded shadow-lg">
+            <h1>Report generated successfully!</h1>
+            
+            <div class="flex items-center">
+              {% if pdf_available %}
+            <a href="{% url 'download_pdf' %}">Download Report</a>
+            {% else %}
+            <p>PDF was not created. Try uploading the file again.</p>
+            {% endif %}
       
-      <div class="flex items-center">
-        {% if pdf_available %}
-      <a href="{% url 'download_pdf' %}">Download Report</a>
-      {% else %}
-      <p>PDF was not created. Try uploading the file again.</p>
-      {% endif %}
-
-      <a href="{% url 'upload_file' %}">Main page</a>
-      </div>
-      
+            <a href="{% url 'upload_file' %}">Main page</a>
+            </div>
+            
+          </div>
     </div>
   </body>
 </html>

@@ -594,6 +594,34 @@ video {
   width: 100%;
 }
 
+.w-\[140px\] {
+  width: 140px;
+}
+
+.w-\[8\] {
+  width: 8;
+}
+
+.w-\[8\2c 75rem\] {
+  width: 8,75rem;
+}
+
+.w-\[8\.75rem\] {
+  width: 8.75rem;
+}
+
+.min-w-\[\] {
+  min-width: ;
+}
+
+.min-w-\[10\] {
+  min-width: 10;
+}
+
+.min-w-\[140px\] {
+  min-width: 140px;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -650,6 +678,10 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-2xl {

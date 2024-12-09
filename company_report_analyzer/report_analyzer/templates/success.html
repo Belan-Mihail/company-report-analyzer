@@ -13,17 +13,17 @@
   </head>
   <body>
     <div class="flex justify-center items-center">
-        <div class="flex flex-col gap-4 items-center justify-center mt-10 p-8 bg-cyan-300 rounded shadow-lg">
+        <div class="flex flex-col gap-4 items-center justify-center mt-10 p-8 bg-cyan-300 rounded shadow-lg text-white">
             <h1>Report generated successfully!</h1>
             
             <div class="flex items-center">
               {% if pdf_available %}
-            <a href="{% url 'download_pdf' %}">Download Report</a>
+            <a class="inline-block" href="{% url 'download_pdf' %}">Download Report</a>
             {% else %}
             <p>PDF was not created. Try uploading the file again.</p>
             {% endif %}
       
-            <a href="{% url 'upload_file' %}">Main page</a>
+            <a class="inline-block" href="{% url 'upload_file' %}">Main page</a>
             </div>
             
           </div>

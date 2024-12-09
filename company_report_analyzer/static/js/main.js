@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const buttonContainer = document.getElementById('button-container')
     const customFileButton = document.getElementById('custom-file-button');
     const fileInput = document.getElementById('id_file')
     const reportsButton = document.getElementById('select-reports_button')

@@ -17,12 +17,12 @@
       <form
         method="post"
         enctype="multipart/form-data"
-        class="bg-cyan-300 rounded p-6 shadow-lg"
+        class="bg-cyan-300 rounded p-4 shadow-lg"
       >
         {% csrf_token %} {{ form|crispy }}
         <!-- Custom button for file selection -->
         <button type="button" id="custom-file-button" class="primary-button">Choose File</button>
-        <div class="flex items-center justify-around gap-4 mt-4">
+        <div id="button-container" class="items-center justify-around gap-4 mt-4 hidden">
           <button type="button" id="select-reports_button" class="primary-button">Select reports</button>
           <button type="button" id="cancel_button" class="secondary-button">
           Cancel

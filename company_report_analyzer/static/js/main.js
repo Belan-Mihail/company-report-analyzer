@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (fileInput.files.length == 0) {     
         reportsButton.classList.add('hidden') 
         cancelButton.classList.add('hidden')
+        buttonContainer.classList.add('hidden')
     } 
+
+   
 
      // Event listener for custom button
     customFileButton.addEventListener('click', () => {
@@ -27,7 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
             cancelButton.classList.remove('hidden') 
             reportsButton.classList.add('visible') 
             cancelButton.classList.add('visible')
-            customFileButton.classList.add('hidden') 
+            customFileButton.classList.add('hidden')
+            buttonContainer.classList.remove('hidden')
+            buttonContainer.classList.remove('hidden')
+            buttonContainer.classList.add('flex') 
         } 
     })
 
@@ -41,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         cancelButton.classList.add('hidden') 
         customFileButton.classList.remove('hidden') 
         customFileButton.classList.add('visible') 
+        buttonContainer.classList.remove('flex')
+        buttonContainer.classList.add('hidden')
         
        
     })
@@ -68,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fileInput.value = ''
         customFileButton.classList.remove('hidden') 
         customFileButton.classList.add('visible')
+        buttonContainer.classList.remove('flex')
+        buttonContainer.classList.add('hidden')
 
         // Reset the state of all checkboxes
         const checkboxes = modalWindow.querySelectorAll('input[type="checkbox"]');

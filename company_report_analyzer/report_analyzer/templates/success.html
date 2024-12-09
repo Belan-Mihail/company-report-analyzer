@@ -13,17 +13,17 @@
   </head>
   <body>
     <div class="flex justify-center items-center">
-        <div class="flex flex-col gap-4 items-center justify-center mt-10 p-8 bg-cyan-300 rounded shadow-lg text-white">
-            <h1>Report generated successfully!</h1>
+        <div class="flex flex-col gap-4 items-center justify-center mt-10 p-8 bg-cyan-300 rounded shadow-lg">
+            <h1 class="text-xl text-custom">Report generated successfully!</h1>
             
-            <div class="flex items-center">
+            <div class="flex items-center justify-around text-[#004171] w-[100%]">
               {% if pdf_available %}
-            <a class="inline-block" href="{% url 'download_pdf' %}">Download Report</a>
+            <a class="inline-block bg-white p-2 rounded-sm no-underline hover:bg-[#004171] hover:text-white hover:underline" href="{% url 'download_pdf' %}">Download Report</a>
             {% else %}
             <p>PDF was not created. Try uploading the file again.</p>
             {% endif %}
       
-            <a class="inline-block" href="{% url 'upload_file' %}">Main page</a>
+            <a class="inline-block bg-white p-2 rounded-sm no-underline ml-2 hover:bg-[#004171]  hover:text-white hover:underline" href="{% url 'upload_file' %}">Main page</a>
             </div>
             
           </div>

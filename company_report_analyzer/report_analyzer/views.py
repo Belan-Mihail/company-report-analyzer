@@ -13,6 +13,9 @@ def process_file(uploaded_file, selected_reports):
     # Reading the downloaded CSV file
     df = pd.read_csv(uploaded_file)
 
+    # Expected headers
+    expected_headers = ['Date', 'Sales', 'Region', 'Name', 'Company']
+
     df = df[:20]
     
     # Generate PDF using selected reports

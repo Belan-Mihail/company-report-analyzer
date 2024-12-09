@@ -12,6 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
         reportsButton.classList.add('hidden') 
         cancelButton.classList.add('hidden')
     } 
+
+     // Event listener for custom button
+    customFileButton.addEventListener('click', () => {
+    fileInput.click(); // We call a click on a hidden input
+    });
     
     // File change handler
     fileInput.addEventListener('change', () => {

@@ -21,10 +21,10 @@
       >
         {% csrf_token %} {{ form|crispy }}
         <!-- Custom button for file selection -->
-        <button type="button" id="custom-file-button" class="primary-button">Choose File</button>
+        <button type="button" id="custom-file-button" class="primary-button sm:p-2 sm:text-sm sm:min-w-[120px]">Choose File</button>
         <div id="button-container" class="items-center justify-around gap-4 mt-4 ">
-          <button type="button" id="select-reports_button" class="primary-button">Select reports</button>
-          <button type="button" id="cancel_button" class="secondary-button">
+          <button type="button" id="select-reports_button" class="primary-button sm:p-2 sm:text-sm sm:min-w-[120px]">Select reports</button>
+          <button type="button" id="cancel_button" class="secondary-button sm:p-2 sm:text-sm sm:min-w-[120px]">
           Cancel
         </button>
         </div>
@@ -61,10 +61,10 @@
                 </label>
               </div>
             <div class="form-button flex justify-around items-center">
-                <button type="submit" id="confirm-processing-button" class="primary-button">
+                <button type="submit" id="confirm-processing-button" class="primary-button sm:p-2 sm:text-sm sm:min-w-[120px]">
                   Start processing
                 </button>
-                <button id="cancel-processing-button" type="button" class="secondary-button">
+                <button id="cancel-processing-button" type="button" class="secondary-button sm:p-2 sm:text-sm sm:min-w-[120px]">
                   Cancel processing
                 </button>
               </div>

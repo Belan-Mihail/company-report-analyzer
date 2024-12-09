@@ -635,16 +635,6 @@ video {
   text-align: center;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -717,12 +707,12 @@ input[type="file"] {
 .primary-button {
   background-color: #52fb0c;
   color: white;
-  padding: 8px;
-  min-width: 120px;
+  padding: 4px;
   border: 1px solid #52fb0c;
   cursor: pointer;
   border-radius: 8px;
   transition: background-color .3 ease-in;
+  font-size: 12px;
 }
 
 .primary-button:hover {
@@ -743,12 +733,13 @@ input[type="file"] {
 .secondary-button {
   background-color: #fb920c;
   color: white;
-  padding: 8px;
-  min-width: 120px;
+  padding: 4px;
+  min-width: 75px;
   border: 1px solid #fb920c;
   cursor: pointer;
   border-radius: 8px;
   transition: background-color .3 ease-in;
+  font-size: 12px;
 }
 
 .secondary-button:hover {
@@ -775,19 +766,22 @@ input[type="file"] {
 }
 
 @media (min-width: 400px) {
-  .sm\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+  .sm\:min-w-\[120px\] {
+    min-width: 120px;
   }
 
-  .sm\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+  .sm\:p-2 {
+    padding: 0.5rem;
   }
 
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 

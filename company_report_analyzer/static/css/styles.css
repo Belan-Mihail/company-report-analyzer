@@ -30,12 +30,13 @@ input[type="file"] {
 .primary-button {
     background-color: #52fb0c;
     color: white;
-    padding: 8px;
-    min-width: 120px;
+    padding: 4px;
+    
     border: 1px solid #52fb0c;
     cursor: pointer;
     border-radius: 8px;
     transition: background-color .3 ease-in;
+    font-size: 12px;
 }
 
 .primary-button:hover {
@@ -56,12 +57,13 @@ input[type="file"] {
 .secondary-button {
     background-color: #fb920c;
     color: white;
-    padding: 8px;
-    min-width: 120px;
+    padding: 4px;
+    min-width: 75px;
     border: 1px solid #fb920c;
     cursor: pointer;
     border-radius: 8px;
     transition: background-color .3 ease-in;
+    font-size: 12px;
 }
 
 .secondary-button:hover {

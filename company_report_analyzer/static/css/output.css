@@ -623,16 +623,12 @@ video {
   background-color: rgb(103 232 249 / var(--tw-bg-opacity, 1));
 }
 
-.p-6 {
-  padding: 1.5rem;
+.p-4 {
+  padding: 1rem;
 }
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-4 {
-  padding: 1rem;
 }
 
 .text-center {
@@ -776,5 +772,22 @@ input[type="file"] {
 .hover\:text-cstm-blue:hover {
   --tw-text-opacity: 1;
   color: rgb(13 176 198 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 400px) {
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 

@@ -10,6 +10,9 @@ module.exports = {
         'custom': 'rgb(61, 61, 61)', 
         'cstm-blue': 'rgb(13, 176, 198)', 
       },
+      screens: {
+        'sm': '400px', // Set a media query for a screen width of 400px
+      }
     },
   },
   plugins: [],

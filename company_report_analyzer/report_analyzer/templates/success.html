@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Success</title>
-</head>
-<body>
-    <h1>Report generated successfully!</h1>
+  </head>
+  <body>
+    <div class="flex flex-col gap-4 items-center justify-center mt-10 p-8">
+      <h1>Report generated successfully!</h1>
+      
+      <div class="flex items-center">
+        {% if pdf_available %}
+      <a href="{% url 'download_pdf' %}">Download Report</a>
+      {% else %}
+      <p>PDF was not created. Try uploading the file again.</p>
+      {% endif %}
 
-    {% if pdf_available %}
-        <a href="{% url 'download_pdf' %}">Download Report</a>
-    {% else %}
-        <p>PDF was not created. Try uploading the file again.</p>
-    {% endif %}
-
-    <br>
-    <a href="{% url 'upload_file' %}">Main page</a>
-</body>
+      <a href="{% url 'upload_file' %}">Main page</a>
+      </div>
+      
+    </div>
+  </body>
 </html>

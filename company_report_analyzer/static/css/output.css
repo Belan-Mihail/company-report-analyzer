@@ -631,6 +631,10 @@ video {
   padding: 2rem;
 }
 
+.p-2 {
+  padding: 0.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -772,6 +776,10 @@ input[type="file"] {
 
   .sm\:p-2 {
     padding: 0.5rem;
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
   }
 
   .sm\:text-2xl {

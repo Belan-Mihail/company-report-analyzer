@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
      // Event listener for custom button
     customFileButton.addEventListener('click', () => {
     fileInput.click(); // We call a click on a hidden input
+    
     });
     
     // File change handler
@@ -24,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
             reportsButton.classList.remove('hidden') 
             cancelButton.classList.remove('hidden') 
             reportsButton.classList.add('visible') 
-            cancelButton.classList.add('visible') 
+            cancelButton.classList.add('visible')
+            customFileButton.classList.add('hidden') 
         } 
     })
 
@@ -33,8 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
         fileInput.value = ''
         reportsButton.classList.remove('visible') 
         cancelButton.classList.remove('visible') 
+        
         reportsButton.classList.add('hidden') 
         cancelButton.classList.add('hidden') 
+        customFileButton.classList.remove('hidden') 
+        customFileButton.classList.add('visible') 
         
        
     })
@@ -50,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cancelButton.classList.remove('visible');
         reportsButton.classList.add('hidden');
         cancelButton.classList.add('hidden');
+        
     })
 
     // Handler for the cancel-processing button
@@ -59,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
         modalWindow.classList.add('hidden');
         cancelProcessButton.classList.add('hidden');
         fileInput.value = ''
+        customFileButton.classList.remove('hidden') 
+        customFileButton.classList.add('visible')
 
         // Reset the state of all checkboxes
         const checkboxes = modalWindow.querySelectorAll('input[type="checkbox"]');

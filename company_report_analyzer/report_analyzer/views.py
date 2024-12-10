@@ -42,7 +42,7 @@ def upload_file(request):
             pdf_output = process_file(uploaded_file, selected_reports)
 
             if pdf_output is None:
-                # render upload nad return clear form and error_message
+                # If file headers do not match, redirect to error page
                 return redirect('error')
 
             # Convert PDF to base64 string
@@ -65,10 +65,8 @@ def success(request):
 
     if pdf_base64:
         context = {'pdf_available': True}
-    else:
-        context = {'pdf_available': False}
-
-    return render(request, 'success.html', context)
+        return render(request, 'success.html', context)
+    
 
 def download_pdf(request):
     # Get base64 string from session
@@ -87,7 +85,6 @@ def download_pdf(request):
         return response
     else:
         return redirect('upload_file')
-
 
 def error(request):
     # Render error page when headers do not match

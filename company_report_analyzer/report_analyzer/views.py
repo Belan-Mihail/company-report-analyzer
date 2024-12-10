@@ -87,3 +87,8 @@ def download_pdf(request):
         return response
     else:
         return redirect('upload_file')
+
+
+def error(request):
+    # Render error page when headers do not match
+    return render(request, 'error.html')

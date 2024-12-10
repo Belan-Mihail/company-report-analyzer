@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link href="{% static 'css/output.css' %}" rel="stylesheet" />
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <title>Report page</title>
+  </head>
+  <body>
+    <div class="flex justify-center items-center">
+      <div
+        class="flex flex-col gap-4 items-center justify-center mt-10 p-2 bg-cyan-300 rounded shadow-lg sm:p-8"
+      >
+        <h1 class="text-sm sm:text-2xl text-custom">Error: Invalid File</h1>
+
+        <div class="flex items-center justify-around text-[#004171] w-[100%]">
+            <p>The CSV file you uploaded does not contain the expected headers. Please upload a valid file.</p>
+            <a
+            class="secondary-button min-w-[140px] ml-2 text-center"
+            href="{% url 'upload_file' %}"
+            >Main page</a
+          >
+        </div>
+      </div>
+      
+    </div>
+    <footer class="flex flex-col gap-2 items-center justify-center text-custom mt-4">
+        <p class="text-sm text-cstm-blue">Made by <span class="text-base">Bilan Mykhailo</span></p>
+        <div class="flex flex-col gap-2 items-center justify-center text-xs">
+            <a class="hover:text-cstm-blue" target="_blank" rel="noopener noreferrer" href="www.linkedin.com/in/mykhailo-bilan">www.linkedin.com/in/mykhailo-bilan</a>
+            <a class="hover:text-cstm-blue" target="_blank" rel="noopener noreferrer" href="https://github.com/Belan-Mihail">https://github.com/Belan-Mihail</a>
+        </div>
+      </footer>
+  </body>
+</html>

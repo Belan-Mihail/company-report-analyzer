@@ -105,3 +105,7 @@ def error(request):
 
     # Render error page when headers do not match
     return render(request, 'error.html', {'error_message': error_message})
+
+
+def detail_page(request):
+    return render(request, 'detail_page')

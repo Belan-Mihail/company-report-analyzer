@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 import base64
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import UploadFileForm
 import pandas as pd
 from .generate_pdf import generate_pdf
 from io import BytesIO
 import os
+from django.urls import reverse
 
 def process_file(uploaded_file, selected_reports):
     # Move the pointer to the beginning of the file before reading
@@ -36,12 +37,12 @@ def upload_file(request):
             uploaded_file = request.FILES['file']
 
             # Get the file extension
-            file_extension = os.path.splitext(upload_file.__name__)[1].lower()
+            file_extension = os.path.splitext(uploaded_file.name)[1].lower()
             # Checking the file extension
             if file_extension != '.csv':
                 # redirect to error page with message
                 error_message = 'Please upload a CSV file'
-                redirect('error') + f'?error_message={error_message}'
+                return HttpResponseRedirect(reverse('error') + f'?error_message={error_message}')
 
             form.save()
 

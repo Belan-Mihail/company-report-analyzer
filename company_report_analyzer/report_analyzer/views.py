@@ -66,6 +66,8 @@ def success(request):
     if pdf_base64:
         context = {'pdf_available': True}
         return render(request, 'success.html', context)
+    else:
+        return redirect('error')
     
 
 def download_pdf(request):

@@ -4,6 +4,6 @@ from . import views
 urlpatterns = [
     path('', views.upload_file, name='upload_file'),
     path('success/', views.success, name='success'),
-    path('error/', views.success, name='error'),
+    path('error/', views.error, name='error'),
     path('download/', views.download_pdf, name='download_pdf'),
 ]

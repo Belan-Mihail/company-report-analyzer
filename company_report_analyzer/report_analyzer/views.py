@@ -35,7 +35,13 @@ def upload_file(request):
         if form.is_valid():
             uploaded_file = request.FILES['file']
 
+            # Get the file extension
             file_extension = os.path.splitext(upload_file.__name__)[1].lower()
+            # Checking the file extension
+            if file_extension != '.csv':
+                # redirect to error page with message
+                error_message = 'Please upload a CSV file'
+                redirect('error') + f'?error_message={error_message}'
 
             form.save()
 

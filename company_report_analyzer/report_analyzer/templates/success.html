@@ -20,13 +20,13 @@
 
         <div class="flex items-center justify-around text-[#004171] w-[100%]">
           {% if pdf_available %}
-          <a class="primary-button" href="{% url 'download_pdf' %}"
+          <a class="primary-button sm:p-2 sm:text-sm sm:min-w-[120px]" href="{% url 'download_pdf' %}"
             >Download Report</a
           >
           {% endif %}
 
           <a
-            class="secondary-button min-w-[140px] ml-2 text-center"
+            class="secondary-button sm:p-2 sm:text-sm sm:min-w-[120px] ml-2 text-center"
             href="{% url 'upload_file' %}"
             >Main page</a
           >

@@ -18,10 +18,10 @@
       >
         <h1 class="text-sm sm:text-2xl text-custom">Error: Invalid File</h1>
 
-        <div class="flex items-center justify-around text-[#004171] w-[100%]">
+        <div class="flex flex-col items-center justify-around text-[#004171] w-[100%]">
             <p>The CSV file you uploaded does not contain the expected headers. Please upload a valid file.</p>
             <a
-            class="secondary-button min-w-[140px] ml-2 text-center"
+            class="secondary-button sm:p-2 sm:text-sm sm:min-w-[120px] mt-2 text-center"
             href="{% url 'upload_file' %}"
             >Main page</a
           >

@@ -42,8 +42,8 @@ def upload_file(request):
             pdf_output = process_file(uploaded_file, selected_reports)
 
             if pdf_output is None:
-                #
-                return render(request, 'upload.html', {form:form,   'error_message': 'File headers do not match expected headers.'})
+                # render upload nad return clear form and error_message
+                return redirect('error')
 
             # Convert PDF to base64 string
             pdf_base64 = base64.b64encode(pdf_output).decode('utf-8')

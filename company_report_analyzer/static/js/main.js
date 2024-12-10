@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // File change handler
     fileInput.addEventListener('change', () => {
+        
+               
         if (fileInput.files.length > 0) {
             reportsButton.classList.remove('hidden') 
             cancelButton.classList.remove('hidden') 

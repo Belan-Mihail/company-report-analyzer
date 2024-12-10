@@ -103,4 +103,4 @@ def error(request):
     error_message = request.GET.get('error_message', None)
 
     # Render error page when headers do not match
-    return render(request, 'error.html')
+    return render(request, 'error.html', {'error_message': error_message})

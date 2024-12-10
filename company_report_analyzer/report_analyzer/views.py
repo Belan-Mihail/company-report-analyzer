@@ -108,4 +108,4 @@ def error(request):
 
 
 def detail_page(request):
-    return render(request, 'detail_page')
+    return render(request, 'detail_page.html')

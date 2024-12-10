@@ -99,5 +99,8 @@ def download_pdf(request):
         return redirect('upload_file')
 
 def error(request):
+    # Extract the error message from the GET parameters if there is one
+    error_message = request.GET.get('error_message', None)
+
     # Render error page when headers do not match
     return render(request, 'error.html')

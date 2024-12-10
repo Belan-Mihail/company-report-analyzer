@@ -5,6 +5,7 @@ from .forms import UploadFileForm
 import pandas as pd
 from .generate_pdf import generate_pdf
 from io import BytesIO
+import os
 
 def process_file(uploaded_file, selected_reports):
     # Move the pointer to the beginning of the file before reading
@@ -33,6 +34,9 @@ def upload_file(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             uploaded_file = request.FILES['file']
+
+            file_extension = os.path.splitext(upload_file.__name__)[1].lower()
+
             form.save()
 
             # Get the selected reports

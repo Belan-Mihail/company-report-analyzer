@@ -92,6 +92,11 @@
           document.getElementById('content-de').style.display = 'none'
           document.getElementById('en-btn').classList.add('active-lang')
           document.getElementById('de-btn').classList.remove('active-lang')
+        } else if (lang === 'de') {
+          document.getElementById('content-de').style.display = 'block';
+          document.getElementById('content-en').style.display = 'none'
+          document.getElementById('en-btn').classList.remove('active-lang')
+          document.getElementById('de-btn').classList.add('active-lang')
         }
       }
     </script>

@@ -85,5 +85,15 @@
         >
       </div>
     </footer>
+    <script>
+      function changeLanguage(lang) {
+        if (lang === 'en') {
+          document.getElementById('content-en').style.display = 'block';
+          document.getElementById('content-de').style.display = 'none'
+          document.getElementById('en-btn').classList.add('active-lang')
+          document.getElementById('de-btn').classList.remove('active-lang')
+        }
+      }
+    </script>
   </body>
 </html>

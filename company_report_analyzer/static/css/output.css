@@ -794,6 +794,25 @@ input[type="file"] {
   color: #ef4444;
 }
 
+.lang-btn {
+  color: black;
+  background: white;
+  width: 30px;
+  height: 30px;
+}
+
+.lang-btn:hover {
+  background: #69e235;
+}
+
+.active-lang {
+  background: #46469f;
+}
+
+.active-lang:hover {
+  background: #46469f;
+}
+
 .hover\:text-cstm-blue:hover {
   --tw-text-opacity: 1;
   color: rgb(13 176 198 / var(--tw-text-opacity, 1));
@@ -826,4 +845,3 @@ input[type="file"] {
     line-height: 1.25rem;
   }
 }
-

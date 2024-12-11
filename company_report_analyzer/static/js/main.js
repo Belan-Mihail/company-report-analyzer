@@ -1,3 +1,8 @@
+const navEntries = performance.getEntriesByType('navigation');
+if (navEntries.length > 0 && navEntries[0].type === 'back_forward') {
+    location.reload(); // reload page
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const buttonContainer = document.getElementById('button-container')
     const customFileButton = document.getElementById('custom-file-button');
@@ -28,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
                
         if (fileInput.files.length > 0) {
+            
             reportsButton.classList.remove('hidden') 
             cancelButton.classList.remove('hidden') 
             reportsButton.classList.add('visible') 

@@ -84,3 +84,8 @@ input[type="file"] {
     outline: #fb920c;
 }
 
+.special-text {
+    font-size: 20px;
+    line-height: 28px;
+    color: #ef4444;
+}

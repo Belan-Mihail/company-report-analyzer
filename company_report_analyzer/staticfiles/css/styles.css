@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.requiredField {
+    display: none;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1 ease-out;
+}
+
+.visible {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 1 ease-in;
+}
+
+input[type="file"] {
+    
+    display: none;
+}
+
+* {
+    outline: none;
+}
+
+.primary-button {
+    background-color: #52fb0c;
+    color: white;
+    padding: 4px;
+    
+    border: 1px solid #52fb0c;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color .3 ease-in;
+    font-size: 12px;
+}
+
+.primary-button:hover {
+    background-color: #55f113;
+    transform: scale(1.05)
+}
+
+.primary-button:active {
+    background-color: #49c912;
+    transform: scale(1)
+}
+
+.primary-button:focus {
+    background-color: #69e235;
+    outline: #4fe50e;
+}
+
+.secondary-button {
+    background-color: #fb920c;
+    color: white;
+    padding: 4px;
+    min-width: 75px;
+    border: 1px solid #fb920c;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color .3 ease-in;
+    font-size: 12px;
+}
+
+.secondary-button:hover {
+    background-color: #f49519;
+    transform: scale(1.05);
+    border: 1px solid #f49519;
+}
+
+.secondary-button:active {
+    background-color: #e38811;
+    transform: scale(1);
+    border: 1px solid #e38811;
+}
+
+.secondary-button:focus {
+    background-color: #f79d26;
+    border: 1px solid #f79d26;
+    outline: #fb920c;
+}
+
+.special-text {
+    font-size: 20px;
+    line-height: 28px;
+    color: #ef4444;
+}
+
+.lang-btn {
+    color: black;
+    background: white;
+    width: 30px;
+    height: 30px;
+}
+
+.lang-btn:hover {
+    background: #69e235;
+}
+
+.active-lang {
+    background: #46469f;
+}
+
+.active-lang:hover {
+    background: #46469f;
+}

@@ -5,11 +5,6 @@
 
 [Live webpage](https://company-report-analyzer.onrender.com/)
 
-### Downloading a Test CSV File
-
-You can download a test CSV file to test the functionality of the application using the following link: 
-[Download CSV](test_data.csv)
-
 ## About Project
 Company Report Analyzer is an application that processes a data file and, based on the processing results, generates reports requested by the user.
 
